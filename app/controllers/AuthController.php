@@ -29,7 +29,10 @@ class AuthController extends BaseController {
 				'password' => Input::get('password')
 			);
 			if(Auth::attempt($user, Input::get('souvenir'))) {
-				return Redirect::intended('user');
+			// for example with auth on user
+				//return Redirect::intended('user');
+				// for example with auth on blog 
+				return Redirect::intended('post/liste');
 			}
 		    return Redirect::to('auth/login')
 		    ->with('pass', 'Le mot de passe n\'est pas correct !')
@@ -40,7 +43,8 @@ class AuthController extends BaseController {
 	public function getLogout()
 	{
 		Auth::logout();
-		return Redirect::route('user.index');
+//		return Redirect::route('user.index');
+		return Redirect::route('post/liste');
 	}
 
 }

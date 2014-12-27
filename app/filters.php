@@ -88,3 +88,9 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+/* new filter to allow admin only to delete posts */
+Route::filter('admin', function()
+{
+    if (!Auth::user()->admin) return Redirect::guest('post/liste');
+});

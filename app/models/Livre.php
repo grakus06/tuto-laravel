@@ -1,13 +1,19 @@
 <?php
 
-class Livre extends \Eloquent {
+class Livre extends Eloquent {
 
-    // Add your validation rules here
-	public static $rules = [
-		// 'title' => 'required'
-	];
+    protected $table = 'livres';
+	public $timestamps = true;
+	protected $fillable = array('titre', 'editeur_id');
 
-	// Don't forget to fill this array
-	protected $fillable = [];
+	public function auteurs()
+	{
+		return $this->belongsToMany('Auteur');
+	}
+
+	public function editeur()
+	{
+		return $this->belongsTo('Editeur');
+	}
 
 }

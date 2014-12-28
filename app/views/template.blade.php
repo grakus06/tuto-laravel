@@ -11,9 +11,16 @@
       {{ HTML::style('https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js') }}
       {{ HTML::style('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js') }}
     <![endif]-->
-    <style> textarea { resize: none; } </style>
   </head>
   <body>
-    @yield('contenu')
+    <header class="jumbotron">
+      <div class="container">
+        <h1  class="page-header">{{ link_to('post/liste', 'Mon joli blog') }}</h1>
+        @yield('header')
+      </div>
+    </header>
+    <div class="container">
+      @yield('contenu')
+    </div>
   </body>
 </html>

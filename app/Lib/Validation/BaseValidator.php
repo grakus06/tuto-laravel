@@ -1,20 +1,18 @@
-<?php namespace Lib\Validation; 
+<?php namespace Lib\Validation;
 
-use Validator;
-use Input;
+use Validator, Input;
 
 abstract class BaseValidator implements ValidatorInterface {
 
     protected $regles = array();
 	protected $errors = array();
+	protected $messages = array();
 
-// change the prototype for 2nd part of the course- add id as param
 	public function fails($id = null)
 	{
-	   // check id
 		if(!is_null($id)) $this->regles = str_replace('id', $id, $this->regles);
 
-		$validation = Validator::make(Input::all(), $this->regles);
+		$validation = Validator::make(Input::all(), $this->regles, $this->messages);
 
 		if($validation->fails())
 		{

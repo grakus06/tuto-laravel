@@ -15,6 +15,10 @@
 					<div class="form-group {{ $errors->has('contenu') ? 'has-error' : '' }}">
 						{{ Form::textarea ('contenu', null, array('class' => 'form-control', 'placeholder' => 'Contenu')) }}
 					</div>
+					<small class="text-danger">{{ $errors->first('tags') }}</small>
+					<div class="form-group {{ $errors->has('tags') ? 'has-error' : '' }}">
+						{{ Form::text('tags', null, array('class' => 'form-control', 'placeholder' => 'Entrez les tags séparés par des virgules')) }}
+					</div>
 					{{ Form::submit('Envoyer !', array('class' => 'btn btn-info pull-right')) }}
 				{{ Form::close() }}
 			</div>

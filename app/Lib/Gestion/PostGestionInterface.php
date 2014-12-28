@@ -5,5 +5,6 @@ interface PostGestionInterface {
     public function liste($i);
     public function save();
     public function del($i);
+	public function tag($tag, $n);
 
 }

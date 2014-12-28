@@ -6,7 +6,12 @@ class PostValidator extends BaseValidator {
 	{
 		$this->regles = array(
 			'titre' => 'required|max:80',
-			'contenu' => 'required'
+			'contenu' => 'required',
+			'tags' => 'tags'
+		);
+
+		$this->messages = array(
+			'tags' => 'Un tag doit avoir un maximum de 20 caractères.',
 		);
 	}
 

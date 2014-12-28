@@ -45,4 +45,10 @@ class PostController extends BaseController {
 		return Redirect::back();
 	}
 
+	public function getTag($tag)
+	{
+		return View::make('liste', $this->gestion->tag($tag, 4))
+		->with('info', 'Résultats pour la recherche du mot-clé : ' . $tag);
+	}
+
 }

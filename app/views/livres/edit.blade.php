@@ -1,0 +1,1 @@
+/Users/C-marescot/Sites/Laravel/tuto/app/views/livres/edit.blade.php

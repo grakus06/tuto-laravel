@@ -122,6 +122,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
+        'Way\Generators\GeneratorsServiceProvider',
 	),
 
 	/*
@@ -192,6 +193,6 @@ return array(
 	),
 
      /* add the debug bar */
-    'Debugbar' => 'Barryvdh\Debugbar\Facade',
+//    'Debugbar' => 'Barryvdh\Debugbar\Facade',
     
 );
